@@ -7,6 +7,8 @@ All the texts used were not written by me
 
 //The Nav Section.
 //Link the Navigation tabs to their Sections 
+
+
 function allNavs(){
 
 //creation the top nav links
@@ -17,15 +19,20 @@ ul.innerHTML =
 <li><a id="link3" class="nav-links"> Services </a></li>
 <li><a id="link4" class="nav-links"> Meet Our Customers </a></li>`
 
-let link1 = document.getElementById("link1");
-let link2 = document.getElementById("link2");
-let link3 = document.getElementById("link3");
-let link4 = document.getElementById("link4")
+  const link1 = document.getElementById("link1");
+  const link2 = document.getElementById("link2");
+  const link3 = document.getElementById("link3");
+  const link4 = document.getElementById("link4");
 
-link1.href = "#section1"
-link2.href = "#section2"
-link3.href = "#section3"
-link4.href = "#section4"
+  const sectionOne = document.getElementById("section1");
+  const sectionTwo = document.getElementById("section2");
+  const sectionThree = document.getElementById("section3");
+  const sectionFour = document.getElementById("section4");
+
+  link1.addEventListener("click", () => { sectionOne.scrollIntoView(true) });
+  link2.addEventListener("click", () => { sectionTwo.scrollIntoView(true) });
+  link3.addEventListener("click", () => { sectionThree.scrollIntoView(true) });
+  link4.addEventListener("click", () => { sectionFour.scrollIntoView(true) });
 
 
 //Creating a Website Navigation Logo
@@ -130,7 +137,7 @@ function reviewDisplay(){
   return reviewSection;
 };
 showReviews();
-setInterval(showReviews, 1500);
+setInterval(showReviews, 2000);
 function getReview() {
   let randomReviews = Math.floor(Math.random() * reviews.length);
   return reviews[randomReviews];
